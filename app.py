@@ -33,30 +33,30 @@ def search_movies(query):
     return movies
 
 
-def recommend_movies(movie_id):
-    # Construct recommendation URL
-    recommend_url = f"{TMDB_ENDPOINT}/movie/{movie_id}/recommendations"
-    params = {
-        "api_key": API_KEY,
-        "page": 1
-    }
-
-    # Send request and get response
-    response = requests.get(recommend_url, params=params)
-    data = response.json()
-
-    # Extract relevant movie information
-    movies = []
-    for movie in data["results"]:
-        movies.append({
-            "id": movie["id"],
-            "title": movie["title"],
-            "release_date": movie["release_date"],
-            "poster_path": movie["poster_path"],
-            "overview": movie["overview"]
-        })
-
-    return movies
+# def recommend_movies(movie_id):
+#     # Construct recommendation URL
+#     recommend_url = f"{TMDB_ENDPOINT}/movie/{movie_id}/recommendations"
+#     params = {
+#         "api_key": API_KEY,
+#         "page": 1
+#     }
+#
+#     # Send request and get response
+#     response = requests.get(recommend_url, params=params)
+#     data = response.json()
+#
+#     # Extract relevant movie information
+#     movies = []
+#     for movie in data["results"]:
+#         movies.append({
+#             "id": movie["id"],
+#             "title": movie["title"],
+#             "release_date": movie["release_date"],
+#             "poster_path": movie["poster_path"],
+#             "overview": movie["overview"]
+#         })
+#
+#     return movies
 
 
 def get_trailer(movie_id):
@@ -93,11 +93,11 @@ if query:
             if trailer_key:
                 trailer_url = f"https://www.youtube.com/watch?v={trailer_key}"
                 st.write(f"You can watch the trailer here: {trailer_url}")
-            # Display download button for the movie
-            # download_url = f"https://vegamovies.party/{movie['title']}"
-            # st.write(f"Download {movie['title']} here:")
-            # if st.button("Download", key=f"download_{movie['title']}"):
-            # webbrowser.open(download_url, new=2)
+                # Display download button for the movie
+                download_url = f"https://www.1337xx.to/search/{movie['title']}/1/"
+
+                if st.button("Download", key=f"download_{movie['title']}"):
+                    webbrowser.open(download_url, new=2)
             st.write("---")
     else:
         st.write("No Result Found! Please Search Again..")
