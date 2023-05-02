@@ -1,9 +1,9 @@
-# Movie-Recommendation-System
+#Movie-Recommendation-System
 
 The movie recommendation system is designed to help users find movies that they might be interested in watching. The system takes in a user's search query, such as a movie title, and returns a list of relevant movies. The system also provides information on each movie, such as its release date, poster image, and overview. Additionally, the system offers a download link for each movie, allowing users to easily download the movie file. Finally, the system suggests related movies that the user might also enjoy based on their search query. The goal of the movie recommendation system is to make it easier for users to discover new movies and expand their entertainment options.
 
 Demonstartion Video Link : 
-
+https://youtu.be/JAdzm4csfRk
 
 
 To Run this porject type the below command into terminal of any IDE: "streamlit run app.py"
